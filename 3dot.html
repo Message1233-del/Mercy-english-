@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+ <title>PAYMENT INFORMATION</title>   
+<style>
+.typing-text {
+  font-size: 50px;
+  font-weight: bold;
+  color: blue;
+  
+}
+.wow{
+  font-size: 100px;
+  font-weight: bold;
+  color: red;
+  text-align:center;
+}
+.get{
+  width:200px;
+  height:100px;
+  border-radius:35px;
+  border-width:4px;
+  background-color:blue;
+  font-size:50px;
+  border-color:black;
+  margin-top:100px;
+  margin-left:360px;
+  cursor:pointer;
+}
+.geto{
+  color:white;
+}
+.check{
+  background-color:black;
+  color:white;
+  width:40px;
+  height:40px;
+}
+.like{
+  font-size:50px;
+  
+}
+</style>
+
+
+
+
+
+
+
+
+
+
+<div title="getting payment information..." class="typing-text"></div>
+<div class="typing-wow"></div>
+
+<script>
+  const typingText = document.querySelector('.typing-text');
+const textArray = ['I teach English online, on a monthly basis. three days in a week, 1hr each day!....', '\nIn accordance with your improvements, the time varries to make you a good English listener and speaker.',' \nyou need to prepare phone, internet, notebook, pen, stickynotes or some papers to stick on your walls for reminder purposes, ','\nand finally pre-payment!','\nI offer different packages.','\n1, weekly 3 days 1hr each day, monthly payment is 8k ETB.','\n2, weekly 3 days 2hrs each day, monthly payment is 10k ETB.','\n3, weekly 2 days 1 hr each day, monthly payment is 4k ETB.','\n4, weekly 2 days 2hrs each day, monthly payment is 6k ETB.','\nto perform the payment you can use my phone number to pay with telebirr,' ,'\n to get my phone number just click GET button.'];
+let index = 0;
+let charIndex = 0;
+
+function type() {
+  if (charIndex < textArray[index].length) {
+    typingText.textContent += textArray[index][charIndex];
+    charIndex++;
+    setTimeout(type, 50); // Adjust the delay as needed
+  } else {
+    charIndex = 0;
+    index++;
+    if (index < textArray.length) {
+      setTimeout(type, 1000); // Adjust the delay between text changes
+    }
+  }
+}
+
+type();
+</script>
+
+
+
+<button title="get mercy's phone number" class="get"><a href="3dot2.html" class="geto">GET</a></button>
+
+
+    
+    
+    
+  </head>
+  <body>
+   
+  </body>
+</html>

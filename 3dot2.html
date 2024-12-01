@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>GET MERCY'S PHONE</title>
+   <style>
+    .img{
+      width:800px;
+      height: 920px;
+      margin-left:80px;
+      border-radius: 100px;
+    } 
+     
+     
+     
+     
+     
+   </style> 
+    
+    
+    
+    
+    
+    
+         <img title="mercy's photo" class="img" src="Mercy3.png" alt=""> 
+    
+    
+    
+    
+    
+<style>
+.typing-text {
+  font-size: 100px;
+  font-weight: bold;
+  color: red;
+  text-align: center;
+  margin-top:100px;
+  cursor:pointer;
+}
+
+</style>
+
+
+
+
+
+
+
+
+
+
+<div title="mercy's phone number" class="typing-text"></div>
+
+
+<script>
+  const typingText = document.querySelector('.typing-text');
+const textArray = ['+251935626507','\n thank you!!!!'];
+let index = 0;
+let charIndex = 0;
+
+function type() {
+  if (charIndex < textArray[index].length) {
+    typingText.textContent += textArray[index][charIndex];
+    charIndex++;
+    setTimeout(type, 50); // Adjust the delay as needed
+  } else {
+    charIndex = 0;
+    index++;
+    if (index < textArray.length) {
+      setTimeout(type, 1000); // Adjust the delay between text changes
+    }
+  }
+}
+
+type();
+
+  
+  
+  
+</script>
+
+
+
+    
+    
+    
+    
+    
+  </head>
+  
+  
+  
+  
+  <body>
+    
+    <h1>
+      
+      
+      
+      
+    </h1>
+    
+    
+  </body>
+</html>

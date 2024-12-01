@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>INBOX FROM MERCY ENGLISH</title>
+ <style>
+   
+   .chat-container {
+    width: 1000px;
+    height: 4000px;
+    border: 1px solid black;
+    overflow-y: scroll;
+    font-size:50px;
+}
+
+.chat-messages {
+    height: 800px;
+    overflow-y: scroll;
+}
+
+.chat-input {
+    display: flex;
+    width:700px;
+    height:200px;
+    margin-top:900px;
+    margin-left:100px;
+    border:solid;
+    font-size:50px;
+}
+
+#message-input {
+    flex-grow: 1;
+    font-size:50px;
+}
+
+   
+ .sender{
+   width:500px;
+   height:100px;
+   font-size:50px;
+   border-radius:25px;
+   background-color:blue;
+   color:white;
+   margin-top:60px;
+   margin-left:40px;
+ }  
+   
+   
+   
+ </style>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+    <title>Real-Time Chat</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-messages"></div>
+        <div class="chat-input">
+            <input type="text" id="message-input" placeholder="Type your message...">
+            <button class="sender" id="send-button"><svg xmlns="http://www.w3.org/2000/svg" width="85" height="100" fill="currentColor" class="bi bi-send" viewBox="0 0 16 16">
+  <path d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576zm6.787-8.201L1.591 6.602l4.339 2.76z"/>
+</svg></button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+
+
+<script>
+  
+  const messageInput = document.getElementById('message-input');
+const sendButton = document.getElementById('send-button');
+const chatMessages = document.querySelector('.chat-messages');
+
+// Function to append a new message to the chat
+function appendMessage(message, isUser) {
+    const messageElement = document.createElement('div');
+    messageElement.classList.add('message');
+    messageElement.textContent = message;
+    if (isUser) {
+        messageElement.classList.add('user-message');
+    } else {
+        messageElement.classList.add('bot-message');
+    }
+    chatMessages.appendChild(messageElement);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+}
+
+// Event listener for the send button
+sendButton.addEventListener('click', () => {
+    const message = messageInput.value;
+    if (message.trim() !== '') {
+        // Send the message to the server (replace with actual server logic)
+        // ...
+
+        // Append the user's message to the chat
+        appendMessage(message, true);
+
+        // Clear the input field
+        messageInput.value = '';
+
+        // Simulate a bot response (replace with actual server response)
+        setTimeout(() => {
+            const botResponse = "hello there: I am mercy english, you can learn english on a monthly basis and your improvements based on your time duration of learning, so you can pay for the learning by the three dots of the home page after you finish the payment go to profile icon at bottom and follow my tiktok account and join my live and  call me to manage your time and finally you will start learning,for additional conversation you can get my telegram account on profile icon at the bottom.";
+            appendMessage(botResponse, false);
+        }, 1000);
+    }
+});
+
+  
+  
+  
+  gapi.load('client:auth2', () => {
+  gapi.client.init({
+    clientId: 'meliktbelay569@.com',
+    scope: 'https://meliktbelay569@gmail.com/'
+  }).then(() => {
+    gapi.auth2.authorize({
+      client_id: 'YOUR_CLIENT_ID.apps.googleusercontent.com',
+      scope: 'https://mail.google.com/',
+      prompt: 'consent'
+    }).then(() => {
+      // Access Gmail API using gapi.client.gmail
+      gapi.client.gmail.users.labels.list({
+        userId: 'me'
+      }).then(response => {
+        console.log(response.wow);
+      });
+    });
+  });
+});
+
+  
+  
+  
+  
+  
+  
+  
+  
+</script>
+
+
+
+
+</body>
+</html>
